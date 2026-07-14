@@ -1,49 +1,300 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Pagina inicial - Portfólio</title>
+    <title>Anderson Silva - Portfólio & Currículo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+	<div class="scroll-up-btn">
+		<ion-icon name="chevron-up-circle-outline"></ion-icon>
+	</div>
+
     <div class="navbar">
         <div class="max-width">
-            <div class=logo><a href="#">Port<span>fólio</span></a></div>
+            <div class="logo"><a href="#">Port<span>fólio</span></a></div>
             <ul class="menu">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Especialidade</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </div>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#experience">Experiência</a></li>
+                <li><a href="#services">Conhecimento</a></li>
+                <li><a href="#skills">Especialidades</a></li>
+    		</ul>
+    		<div class="menu-btn">
+				<ion-icon name="menu-outline"></ion-icon>
+    		</div>
+    	</div>
     </div>
-	<section class="home" id="home">
+
+    <section class="home" id="home">
         <div class="max-width">
             <div class="home-content">
-                <div class="text-1">Olá, meu nome é</div>
-                <div class="text-2">Anderson</div>
-                <div class="text-3">Eu sou <span>Artista</span></div>
+                <div class="text-1"><span class="typing"></span></div>
+                <div class="text-2">Anderson da Silva</div>
+                <div class="text-3">Eu sou <span>Técnico de TI & Artista Digital</span></div>
+                <a href="#experience">Ver Experiências</a>
             </div>
         </div>
     </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <section class="about" id="about">
+        <div class="max-width">
+        	<h2 class="title">Sobre</h2>
+            <div class="about-content">
+            	<div class="column left">
+	            	<img src="imagem/Pp.jpg" alt="Foto de Anderson Santos da Silva">
+	            </div>
+	            <div class="column right">
+            		<div class="text">Um pouco sobre mim <span> ㋡ </span></div>
+            		<p>
+                        Sou técnico de Informatica com experiência em manutenção de hardware, redes e infraestrutura de TI, além de excelente comunicação no atendimento ao cliente, buscando sempre entregar um trabalho eficiente, transparente e focado na melhor solução.
+                    </p>
+                    <p>
+                        Sou movido pela curiosidade e criatividade: venho há tempo estudando e aperfeiçoando minhas técnicas com o Adobe Photoshop.
+                    </p>
+                    <a href="imagem/Curriculo_Anderson.pdf" download>Download CV (PDF)</a>
+	            </div>
+	        </div>
+	 	</div>        
+    </section>
+
+    <section class="experience" id="experience">
+        <div class="max-width">
+            <h2 class="title">Experiência</h2>
+            <div class="exp-content">
+                
+                <div class="exp-card">
+                    <div class="company-logo">
+                        <img src="imagem/doctor.jpg" alt="Doctornet" onerror="this.style.display='none';">
+                        <span>Doctornet</span>
+                    </div>
+                    <div class="exp-details">
+                        <h3>Suporte Técnico N1 & Infraestrutura de TI</h3>
+                        <span class="date">2026</span>
+                        <ul>
+                            <li>Administração de Active Directory (gestão de contas, criação e redefinição de senhas).</li>
+                            <li>Gerenciamento de redes corporativas via UniFi Network (análise de conectividade, sinal e desempenho de APs e switches).</li>
+                            <li>Administração e diagnóstico de sistemas de telefonia VoIP (Fanvil, MicroSIP).</li>
+                            <li>Acompanhamento de infraestrutura de storage, licenciamento e virtualização (VMware/Broadcom).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exp-card">
+                    <div class="company-logo">
+                        <img src="imagem/sf.png" alt="SFTech" onerror="this.style.display='none';">
+                        <span>Sftech / Atende Portaria</span>
+                    </div>
+                    <div class="exp-details">
+                        <h3>Técnico de Instalação e Manutenção</h3>
+                        <span class="date">2025 - 2026</span>
+                        <ul>
+                            <li>Manutenção preventiva, corretiva e diagnóstico completo de hardware e impressoras.</li>
+                            <li>Atendimento técnico presencial especializado em condomínios e escritórios corporativos.</li>
+                            <li>Instalação e suporte de equipamentos de segurança e controle de acesso.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exp-card">
+                    <div class="company-logo">
+                        <img src="imagem/eqs.jpg" alt="EQS Engenharia" onerror="this.style.display='none';">
+                        <span>EQS Engenharia</span>
+                    </div>
+                    <div class="exp-details">
+                        <h3>Técnico de Instalação e Manutenção</h3>
+                        <span class="date">2025</span>
+                        <ul>
+                            <li>Instalação física e lógica de internet estruturada, do poste até o modem do cliente.</li>
+                            <li>Configuração avançada de modens, roteadores e topologias de rede doméstica/empresarial.</li>
+                            <li>Diagnóstico preciso e resolução de falhas de atenuação ou intermitência no sinal de rede.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exp-card">
+                    <div class="company-logo">
+                        <img src="imagem/pap.jpg" alt="Ponto a Ponto" onerror="this.style.display='none';">
+                        <span>Ponto a Ponto Informática</span>
+                    </div>
+                    <div class="exp-details">
+                        <h3>Suporte Técnico</h3>
+                        <span class="date">2024</span>
+                        <ul>
+                            <li>Suporte técnico remoto e presencial focado na experiência do usuário final.</li>
+                            <li>Identificação ágil e correção de gargalos em sistemas operacionais e hardware.</li>
+                            <li>Instalação, configuração de computadores do zero, backups preventivos e manutenção geral.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- Seção: Áreas de Atuação (Substituindo Conhecimento e Verticais) -->
+    <section class="services" id="services">
+        <div class="max-width">
+            <h2 class="title">O Que Eu Resolvo</h2>
+            <div class="services-content">
+                
+                <!-- Card 1: Infraestrutura e Redes -->
+                <div class="card">
+                    <div class="box">
+                        <ion-icon name="globe-outline"></ion-icon>
+                        <div class="text">Infraestrutura & Redes</div>
+                        <p>Configuração de modems, roteadores e sistemas Wi-Fi Mesh para alta performance. Estruturação de cabeamento estruturado e mapeamento de endereçamento IP.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Hardware e Suporte -->
+                <div class="card">
+                    <div class="box">
+                        <ion-icon name="hardware-chip-outline"></ion-icon>
+                        <div class="text">Hardware & Suporte TI</div>
+                        <p>Montagem, diagnóstico avançado e manutenção corretiva de computadores, notebooks e impressoras (laser e jato de tinta). Resolução de problemas físicos e de sistema.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Segurança e Campo -->
+                <div class="card">
+                    <div class="box">
+                        <ion-icon name="shield-checkmark-outline"></ion-icon>
+                        <div class="text">Segurança & Operações</div>
+                        <p>Atuação técnica de campo seguindo rigorosamente as normas de segurança do trabalho (EPI). Foco em atendimento presencial de excelência e suporte direto ao cliente.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- Especialidades & Formação -->
+    <section class="skills" id="skills">
+        <div class="max-width">
+            <h2 class="title">Especialidades</h2>
+            <div class="skills-content">
+                
+                <!-- Coluna da Esquerda: Sua Animação Autoral -->
+                <div class="column left">
+                    <div class="gif-container">
+                        <img src="imagem/animacaoexemplo.gif" alt="Animação Exemplo - Photoshop" class="portfolio-gif">
+                        <span class="gif-badge">Design & Motion no Photoshop</span>
+                    </div>
+                </div>
+
+                <!-- Coluna da Direita: Formação, Certificações e Tecnologias -->
+                <div class="column right">
+                    <div class="sub-title">Formação Acadêmica & Cursos</div>
+                    
+                    <div class="education-timeline">
+                        <!-- 1. Prepara Cursos (2017) -->
+                        <div class="edu-item">
+                            <div class="edu-icon"><ion-icon name="construct-outline"></ion-icon></div>
+                            <div class="edu-info">
+                                <h4>Montagem e Manutenção de Computadores e Notebooks</h4>
+                                <span class="institution">Prepara Cursos</span>
+                                <span class="edu-date">Concluído em 2017</span>
+                                
+                                <!-- Grade Curricular Prepara -->
+                                <div class="course-syllabus">
+                                    <span class="syllabus-title">Grade Curricular:</span>
+                                    <div class="syllabus-badges">
+                                        <span>Manutenção de Desktops</span>
+                                        <span>Manutenção de Notebooks</span>
+                                        <span>Hardware de Celulares</span>
+                                        <span>Cabeamento & Redes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Claro Brasil (2025) -->
+                        <div class="edu-item">
+                            <div class="edu-icon"><ion-icon name="ribbon-outline"></ion-icon></div>
+                            <div class="edu-info">
+                                <h4>Treinamento em Infraestrutura de Redes & Segurança</h4>
+                                <span class="institution">Claro Brasil</span>
+                                <span class="edu-date">Concluído em 2025</span>
+                                <p class="edu-desc">Uso prático de Equipamentos de Proteção Individual (EPI), configuração avançada de roteadores, modems, redes Wi-Fi Mesh, endereçamento IP e técnicas de atendimento presencial ao cliente.</p>
+                            </div>
+                        </div>
+
+                        <!-- 3. Técnico em Informática (2026) -->
+                        <div class="edu-item">
+                            <div class="edu-icon"><ion-icon name="school-outline"></ion-icon></div>
+                            <div class="edu-info">
+                                <h4>Técnico em Informática</h4>
+                                <span class="institution">Escola Técnica João XXIII</span>
+                                <span class="edu-date">Concluído em 2026</span>
+                                
+                                <!-- Grade Curricular Semestral João XXIII -->
+                                <div class="course-syllabus">
+                                    <span class="syllabus-title">Evolução e Grade Curricular:</span>
+                                    
+                                    <div class="semester-box">
+                                        <div class="semester-header">1º Semestre: Fundamentos de Hardware</div>
+                                        <p>Grandezas Elétricas aplicadas à TI, Informática Básica, Montagem e Manutenção Corretiva de Computadores.</p>
+                                    </div>
+
+                                    <div class="semester-box">
+                                        <div class="semester-header">2º Semestre: Infraestrutura de Redes</div>
+                                        <p>Arquitetura de Redes, Configuração de Ativos, Redes Locais (LAN) e Manutenção de Infraestrutura de Comunicação.</p>
+                                    </div>
+
+                                    <div class="semester-box">
+                                        <div class="semester-header">3º Semestre: Programação</div>
+                                        <div class="semester-details">
+                                            <!-- Disciplina 1 -->
+                                            <strong>1. Gestão e Projetos de Sistemas:</strong><br>
+                                            Engenharia de Requisitos, Modelagem UML (Diagramas de Caso de Uso, Classes, Sequência e Atividades), Metodologias Ágeis (Scrum/Kanban) e Ciclo de Vida de Software.
+                                            <br>
+                                            
+                                            <!-- Disciplina 2 -->
+                                            <strong>2. Lógica de Programação:</strong><br>
+                                            Desenvolvimento de algoritmos através de Descrição Narrativa, Fluxogramas, Diagramas de Chapin e Português Estruturado (Portugol).
+                                            <br>
+                                            
+                                            <!-- Disciplina 3 -->
+                                            <strong>3. Banco de Dados:</strong><br>
+                                            Modelagem conceitual (Entidades, Relacionamentos, Cardinalidades e Atributos). Prática de banco de dados relacional com comandos SQL de criação (DDL) e manipulação (DML).
+                                            <br>
+                                            
+                                            <!-- Disciplina 4 -->
+                                            <strong>4. Linguagem de Programação:</strong><br>
+                                            Implementação prática de código e projetos utilizando as linguagens Python, HTML/CSS, JavaScript, PHP e Java.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tags de Competências Práticas -->
+                    <div class="sub-title" style="margin-top: 30px;">Práticas Especializadas</div>
+                    <div class="tech-tags">
+                        <span class="tag">Manutenção de Impressoras (Jato de Tinta & Laser)</span>
+                        <span class="tag">Diagnóstico de Hardware</span>
+                        <span class="tag">Segurança do Trabalho (EPI/NR)</span>
+                        <span class="tag">Atendimento Técnico ao Cliente</span>
+                        <span class="tag">Blender 3D (Iniciante)</span>
+                        <span class="tag">Adobe Photoshop</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="script.js"></script>
-
-	
-
-
-
-
-	</body>
+</body>
 </html>

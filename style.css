@@ -1,81 +1,742 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* ---- Variáveis da Paleta Azul Oceano Premium ---- */
+:root {
+    --bg-body: #060d1f;
+    --bg-card: #0d1830;
+
+    --primary: #5ea3ff;
+    --secondary: #2a5ca8;
+    --accent: #c8e2ff;
+
+    --text-dark: #f4f8ff;
+    --text-light: #9fb5d9;
+
+    --success: #4d8bb8;
+    --border: #1d335c;
+
+    --vo: #7bb5ff;
+    --vi: #ffffff;
+    --ver: #5f8fb3;
+}
+
+/* ---- Configurações Gerais ---- */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
-.max-width{
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-body);
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.max-width {
     max-width: 1300px;
     padding: 0 80px;
     margin: auto;
 }
-.navbar{
+
+section {
+    padding: 80px 0;
+}
+
+section .title {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    position: relative;
+    color: var(--text-dark);
+}
+
+section .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 120px;
+    height: 3px;
+    background: var(--primary);
+    transform: translateX(-50%);
+}
+
+section .title::after {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 16px;
+    background: var(--bg-body);
+    color: var(--accent);
+    padding: 0 15px;
+    transform: translateX(-50%);
+    font-weight: 500;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ---- Navbar ---- */
+.navbar {
     position: fixed;
     width: 100%;
-    padding: 30px 0;
+    padding: 25px 0;
     font-family: 'Ubuntu', sans-serif;
+    z-index: 999;
+    transition: all 0.3s ease;
+    
+    /* Fundo opaco inicial usando a cor do card com um leve toque de transparência (0.9) */
+    background: rgba(13, 24, 48, 0.9); 
+    border-bottom: 1px solid rgba(29, 51, 92, 0.5); /* Linha sutil na borda inferior */
+    backdrop-filter: blur(8px); /* Efeito opaco estilo vidro borrado moderno */
+    -webkit-backdrop-filter: blur(8px);
 }
-.navbar.sticky
-{
-	 padding: 30px 0;
+
+.navbar.sticky {
+    padding: 12px 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
-.navbar .max-width{
+.navbar .max-width {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    }
-.navbar .logo a{
-    color: darkblue;
-    font-size: 35px;
-    font-weight: 520;
 }
-.navbar .logo a span{
-    color: blueviolet;
 
+.navbar .logo a {
+    color: var(--vi);
+    transition: all 0.3s ease;
+    font-size: 35px;
+    font-weight: 700;
 }
-.navbar .menu li{
+
+.navbar .logo a span {
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.navbar .menu li {
     list-style: none;
     display: inline-block;
 }
-.navbar .menu li a{
-    color: black;
+
+.navbar .menu li a {
+    color: var(--text-light);
     font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
     transition: color 0.3s ease;
 }
-.navbar .menu li a:hover{
-    color: blueviolet;
+
+.navbar .menu li a:hover {
+    color: var(--primary);
 }
 
-.home{
+/* ---- Menu Mobile ---- */
+.menu-btn {
+    color: var(--vi);
+    font-size: 32px;
+    cursor: pointer;
+    display: none;
+}
+
+/* ---- Home ---- */
+.home {
     display: flex;
-	background-image: url('Imagem/Fundo.png');
-	background-size: 100%;
-	background-repeat: no-repeat;
+    /* Imagem limpa e centralizada */
+    background: url('imagem/luabaixa.png') no-repeat center center;
+    background-size: cover;
     height: 100vh;
-    color: black;
     min-height: 500px;
     font-family: 'Ubuntu', sans-serif;
+    align-items: center;
+    position: relative;
 }
-.home .max-width{
-    margin: auto 0 auto 40px;
-    width= "100" height="100">
+
+/* Criamos uma leve camada escura atrás do texto para dar contraste, sem apagar a imagem */
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(6, 13, 31, 0.4); 
+    z-index: 1;
 }
-.home .home-content .text-1{
-    font-size: 27px;
+
+.home .max-width {
+    width: 100%;
+    position: relative;
+    z-index: 2; 
 }
-.home .home-content .text-2{
-    font-size: 75px;
-    font-weight: 500;
-    margin-left: 3px;
-}
-.home .home-content .text-3{
-    font-size: 40px;
+
+/* Sombra nas letras para destacar o texto sobre qualquer imagem */
+.home .home-content .text-2 {
+    color: var(--vi);
+    font-size: 64px;
+    font-weight: 700;
     margin: 5px 0;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
 }
-.home .home-content .text-3 span{
-    color: blanchedalmond;
-    font-weight: 800;
+
+.home .home-content .text-1,
+.home .home-content .text-3 {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* ---- Seção: Sobre ---- */
+.about .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .title::after {
+    content: "Quem sou eu";
+}
+
+.about .about-content .left {
+    width: 40%;
+}
+
+.about .about-content .left img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 12px;
+    border-bottom: 6px solid var(--primary);
+    border-left: 6px solid var(--secondary);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.about .about-content .right {
+    width: 55%;
+}
+
+.about .about-content .right .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+.about .about-content .right p {
+    text-align: justify;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.about .about-content .right a {
+    display: inline-block;
+    background: transparent;
+    color: var(--primary);
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 6px;
+    border: 2px solid var(--primary);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.about .about-content .right a:hover {
+    color: var(--bg-body);
+    background: var(--primary);
+}
+
+/* ---- Seção: Experiência (Caixas Modulares) ---- */
+.experience {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.experience .title::after {
+    content: "Trajetória Profissional";
+    background: var(--bg-card);
+}
+
+.experience .exp-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.experience .exp-card {
+    background: var(--bg-body);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.experience .exp-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Ajuste e padronização dos Logos das Empresas Inicio*/
+.experience .company-logo {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+}
+
+.experience .company-logo img {
+    width: 60px;          
+    height: 60px;         
+    object-fit: cover;    
+    object-position: center; 
+    margin-right: 15px;
+    background: #ffffff;  
+    padding: 2px;        
+}
+/* Ajuste e padronização dos Logos das Empresas Fim */
+.experience .company-logo span {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--vi);
+}
+
+.experience .exp-details h3 {
+    font-size: 19px;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.experience .exp-details .date {
+    font-size: 14px;
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.experience .exp-details ul {
+    list-style: none;
+}
+
+.experience .exp-details ul li {
+    font-size: 15px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 20px;
+}
+
+.experience .exp-details ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-size: 16px;
+}
+
+/* ---- Seção: Áreas de Atuação  ---- */
+.services {
+    background: var(--bg-body);
+    padding: 100px 0;
+}
+
+.services .title::after {
+    content: "O que eu faço de melhor";
+    background: var(--bg-body);
+}
+
+.services .services-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.services .services-content .card {
+    width: calc(33.33% - 14px);
+    background: var(--bg-card);
+    text-align: center;
+    border-radius: 12px;
+    padding: 40px 25px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.services .services-content .card:hover {
+    background: var(--secondary);
+    border-color: var(--primary);
+    transform: translateY(-8px);
+}
+
+.services .services-content .card .box {
+    transition: all 0.3s ease;
+}
+
+.services .services-content .card:hover .box {
+    transform: scale(1.02);
+}
+
+.services .services-content .card ion-icon {
+    font-size: 45px;
+    color: var(--primary);
+    transition: color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.services .services-content .card:hover ion-icon {
+    color: var(--vi);
+}
+
+.services .services-content .card .text {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0 12px 0;
+    color: var(--text-dark);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.services .services-content .card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* ---- Responsivo para os Cards ---- */
+@media (max-width: 940px) {
+    .services .services-content .card {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .services .services-content .card {
+        width: 100%;
+    }
+}
+
+/* ---- Seção: Especialidades (Moderna com GIF e Linha do Tempo) ---- */
+.skills {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.skills .title::after {
+    content: "Educação & Competências";
+    background: var(--bg-card);
+}
+
+.skills .skills-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Coluna do GIF (Proporção 381x611) */
+.skills .skills-content .left {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+.skills .gif-container {
+    position: relative;
+    width: 100%;
+    max-width: 280px; /* Reduzimos um pouco o tamanho máximo mantendo a proporção */
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skills .gif-container:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.skills .portfolio-gif {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 381/611; /* Mantém a proporção exata informada */
+    object-fit: cover;
+    display: block;
+}
+
+.skills .gif-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(13, 24, 48, 0.9);
+    backdrop-filter: blur(5px);
+    color: var(--primary);
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    border-top: 1px solid var(--border);
+}
+
+/* Coluna das Formações */
+.skills .skills-content .right {
+    width: 60%;
+}
+
+.skills .skills-content .right .sub-title {
+    font-size: 22px;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Estrutura de Linha de Tempo para Educação */
+.skills .education-timeline {
+    border-left: 2px solid var(--border);
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.skills .edu-item {
+    position: relative;
+}
+
+.skills .edu-icon {
+    position: absolute;
+    left: -31px;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    background: var(--bg-card);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 11px;
+}
+
+.skills .edu-info h4 {
+    font-size: 18px;
+    color: var(--vi);
+    margin-bottom: 3px;
+}
+
+.skills .edu-info .institution {
+    font-size: 14px;
+    color: var(--primary);
+    display: block;
+    font-weight: 500;
+}
+
+.skills .edu-info .edu-date {
+    font-size: 13px;
+    color: var(--text-light);
+    display: inline-block;
+    background: rgba(29, 51, 92, 0.4);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-weight: 500;
+    border: 1px solid var(--border);
+}
+
+.skills .edu-info .edu-desc {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* Tags de Especialidades Modorneas (Sem Porcentagem) */
+.skills .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skills .tech-tags .tag {
+    background: var(--bg-body);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skills .tech-tags .tag:hover {
+    background: var(--secondary);
+    border-color: var(--primary);
+    color: var(--vi);
+    transform: translateY(-2px);
+}
+
+/* ---- Estilização da Grade Curricular (Syllabus) ---- */
+.skills .course-syllabus {
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.skills .syllabus-title {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Badges para o curso da Prepara */
+.skills .syllabus-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skills .syllabus-badges span {
+    background: var(--bg-body);
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Blocos de Semestres para o João XXIII */
+.skills .semester-box {
+    border-left: 3px solid var(--accent);
+    padding-left: 12px;
+    margin-bottom: 12px;
+}
+
+.skills .semester-box:last-child {
+    margin-bottom: 0;
+    border-left-color: var(--primary);
+}
+
+.skills .semester-header {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--vi);
+    margin-bottom: 4px;
+}
+
+.skills .semester-box p,
+.skills .semester-details {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.skills .semester-details strong {
+    color: var(--text-dark);
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* ---- Responsivo para a seção de Especialidades ---- */
+@media (max-width: 940px) {
+    .skills .skills-content .left,
+    .skills .skills-content .right {
+        width: 100% !important;
+    }
+    
+    .skills .gif-container {
+        max-width: 240px; /* Reduz um pouquinho em telas menores para melhor proporção */
+    }
+}
+
+/* ---- Responsivo / Media Queries ---- */
+@media (max-width: 1300px) {
+    .max-width { padding: 0 40px; }
+}
+
+@media (max-width: 1104px) {
+    .about .about-content .left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    .about .about-content .right { width: 100%; }
+    .experience .exp-content { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 940px) {
+    .menu-btn { display: block; }
+    .navbar .menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        left: 100%;
+        top: 0;
+        background: var(--bg-card);
+        padding-top: 100px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active { left: 0; }
+    .navbar .menu li { display: block; }
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 15px 0;
+        font-size: 22px;
+    }
+    .home .home-content .text-2 { font-size: 48px; }
+    .services .serv-content .card,
+    .skills .skills-content .column {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 690px) {
+    .home .home-content .text-2 { font-size: 38px; }
+    .home .home-content .text-3 { font-size: 18px; }
+    .max-width { padding: 0 20px; }
 }
